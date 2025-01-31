@@ -1,7 +1,7 @@
 aiofiles==24.1.0
+altgraph==0.17.4
 annotated-types==0.7.0
 anyio==4.8.0
-bbox==0.1.0
 carvekit==4.1.2
 certifi==2024.12.14
 charset-normalizer==3.4.1
@@ -32,9 +32,12 @@ nvidia-nccl-cu12==2.21.5
 nvidia-nvjitlink-cu12==12.4.127
 nvidia-nvtx-cu12==12.4.127
 opencv-python==4.11.0.86
+packaging==24.2
 pillow==11.1.0
 pydantic==2.10.6
 pydantic_core==2.27.2
+pyinstaller==6.11.1
+pyinstaller-hooks-contrib==2025.0
 python-multipart==0.0.20
 requests==2.32.3
 Rx==3.2.0
@@ -46,7 +49,6 @@ torch==2.6.0
 torchvision==0.21.0
 tqdm==4.67.1
 triton==3.2.0
-typing==3.7.4.3
 typing_extensions==4.12.2
 urllib3==2.3.0
 uvicorn==0.34.0

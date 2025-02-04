@@ -55,10 +55,19 @@ def auto_rotate(image: Image.Image) -> Image.Image:
     """Fix image orientation using EXIF data"""
     return ImageOps.exif_transpose(image)
 
+def ensure_portrait_mode(image: Image.Image) -> Image.Image:
+    """Flips image so that it is in portrait mode"""
+    if image.width > image.height:
+        return image.transpose(Image.ROTATE_270)
+    return image
+
 def process_image(image: Image.Image, interface: HiInterface) -> Image.Image:
     """Full processing pipeline for a single image"""
+    # Convert to portrait mode
+    image_prep = ensure_portrait_mode(image)
+
     # Remove background
-    bg_removed = interface([image])[0]
+    bg_removed = interface([image_prep])[0]
     
     # Trim transparent areas
     trimmed = trim_transparency(bg_removed)

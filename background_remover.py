@@ -2,6 +2,8 @@ import os
 import zipfile
 from pathlib import Path
 from PIL import Image, ImageOps
+import pillow_heif  # New import for HEIC support
+pillow_heif.register_heif_opener()  # Register HEIC file opener with Pillow
 import torch
 import tempfile
 from carvekit.api.high import HiInterface
@@ -48,7 +50,6 @@ def calculate_target_size(original_size: tuple) -> tuple:
     new_height = int(orig_height * scale)
     
     # Ensure we don't exceed maximum dimensions
-    # TODO: check this ???
     return (min(new_width, 1400), min(new_height, 2400))
 
 def auto_rotate(image: Image.Image) -> Image.Image:

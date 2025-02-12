@@ -18,7 +18,7 @@ class FileUploaderApp:
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
         self.thread_pool_scheduler = ThreadPoolScheduler()
-        self.supported_file_types = (".png", ".jpeg", ".jpg")
+        self.supported_file_types = (".png", ".jpeg", ".jpg", ".heic", )
         self.valid_files: List[str] = []
         self.current_zip_path: Optional[str] = None
         self.background_process: Optional[Observable] = None
@@ -165,7 +165,7 @@ class FileUploaderApp:
         """Open a file dialog to select files."""
         file_paths = filedialog.askopenfilenames(
             title="Select Files",
-            filetypes=[("Image Files", "*.png *.jpeg *.jpg")]
+            filetypes=[("Image Files", "*.png *.jpeg *.jpg *.heic *.HEIC")]
         )
         if file_paths:
             self.add_files(file_paths)

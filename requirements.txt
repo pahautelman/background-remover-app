@@ -34,6 +34,7 @@ nvidia-nvtx-cu12==12.4.127
 opencv-python==4.11.0.86
 packaging==24.2
 pillow==11.1.0
+pillow_heif==0.21.0
 pydantic==2.10.6
 pydantic_core==2.27.2
 pyinstaller==6.11.1
